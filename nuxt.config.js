@@ -8,7 +8,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "nuxt2-tailwind3-boilerplate",
+    title: "Fundall Fronted Test",
     htmlAttrs: {
       lang: "en",
     },
@@ -25,7 +25,9 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [     { src: '~/plugins/toastr.js', mode: 'client' }, '~/plugins/api-service.js',
+  // { src: '~/plugins/toastr.js', mode: 'client' },
+],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -34,10 +36,15 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxt/postcss8",
+    '@nuxtjs/moment',
   ],
+  axios: {
+    // Axios module configuration
+    baseURL: 'https://expense-api.fundall.io', // Base URL for all API calls
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios',],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

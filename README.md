@@ -1,4 +1,4 @@
-# nuxt2-tailwind3-boilerplate
+# Fundall Frontend Test
 
 ## Build Setup
 
